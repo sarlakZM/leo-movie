@@ -1,4 +1,4 @@
-## Time Tunnel (Movies)
+## LeoMovie
 
 This project shows a few films from themoviedb site (this site shows Millions of movies and as a developer, you can use the TMDb API service in your project).
 
@@ -71,8 +71,6 @@ Format the code with [Prettier](https://prettier.io/)
 ```
 
 ## API Reference [TNDb](developers.themoviedb.org)
-
-#### Get all items
 
 | Function                                | Method | Reference                                                                      |
 | :-------------------------------------- | :----- | :----------------------------------------------------------------------------- |
