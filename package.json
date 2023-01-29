@@ -1,0 +1,92 @@
+{
+  "name": "leo-movie",
+  "version": "0.1.0",
+  "private": true,
+  "keywords": [
+    "React",
+    "Typescript",
+    "TMDb"
+  ],
+  "author": "Zahra Sarlak<sarlak.zh@gmail.com>(https://github.com/sarlakZM)",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "msw init public/ --save && react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|md|tsx|scss|json|ts)\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx|ts|tsx)": [
+      "npm run lint"
+    ],
+    "*.+(js|jsx|json|css|md|tsx|scss|json|ts)": [
+      "npm run format"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^13.4.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.1",
+    "husky": "^8.0.3",
+    "jest": "^27.5.1",
+    "lint-staged": "^13.1.0",
+    "msw": "^1.0.0",
+    "prettier": "^2.8.3"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.11",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@types/react-router-dom": "^5.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.7.0",
+    "react-router-dom": "^6.7.0",
+    "react-scripts": "5.0.1",
+    "ts-jest": "^27.1.5",
+    "typescript": "^4.9.4",
+    "web-vitals": "^2.1.4"
+  },
+  "msw": {
+    "workerDirectory": "public"
+  }
+}
