@@ -70,7 +70,7 @@ Format the code with [Prettier](https://prettier.io/)
   npm run format
 ```
 
-## API Reference [TNDb](developers.themoviedb.org)
+## API Reference [TNDb](https://developers.themoviedb.org)
 
 | Function                                | Method | Reference                                                                      |
 | :-------------------------------------- | :----- | :----------------------------------------------------------------------------- |
