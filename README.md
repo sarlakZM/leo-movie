@@ -1,124 +1,187 @@
 ## LeoMovie
 
-This project shows a few films from themoviedb site (this site shows Millions of movies and as a developer, you can use the TMDb API service in your project).
+A movie discovery application , using **React** and **TypeScript**.
+
+The project integrates with **TMDb API** to search and display movies, manage favorites and watchlist items, and provide a responsive user experience across desktop and mobile devices.  
+It also includes unit testing, API mocking, linting, formatting, and a clean reusable component-based architecture.
+
+---
 
 ## Built With
 
 [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://reactjs.org)
 [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)](https://mui.com/)
+[![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)](https://reactrouter.com/)
+[![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
+[![Testing Library](https://img.shields.io/badge/Testing_Library-E33332?style=for-the-badge&logo=testinglibrary&logoColor=white)](https://testing-library.com/)
+[![MSW](https://img.shields.io/badge/MSW-FF6A33?style=for-the-badge)](https://mswjs.io/)
 [![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)
+[![Prettier](https://img.shields.io/badge/Prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)](https://prettier.io/)
+[![Husky](https://img.shields.io/badge/Husky-Git_Hooks-000000?style=for-the-badge)](https://typicode.github.io/husky/)
+
+---
 
 ## Features
 
-**All functionality and showing movies perform from/to the main API on (TMDb )**
+### **Assessment Requirements**
 
-- List for showing popular movies
-- Possibilty to search for movies on the search page
-- Have functionality for setting movies as your favorites, maybe with a star
-- Have functionality for setting the movie as Watch later
-- A Menu and list where you can see Watchlist and Favorites movies
-- Write unit tests
+- Search field and result listing  
+  Users can search for movies and view results in a clean responsive interface.
+
+- Favorite movies  
+  Users can mark movies as favorites.
+
+- Watch later list  
+  Users can save movies to a watchlist for later viewing.
+
+- Responsive design  
+  The application is designed to work properly on both desktop and mobile devices.
+
+- Testing  
+  Unit tests are included in the repository.
+
+- Demo included  
+  Screenshots are provided to demonstrate the application.
+
+---
+
+### **All Functionality**
+
+- Display popular movies from **TMDb**
+- Search movies by title
+- Add or remove movies from **Favorites**
+- Add or remove movies from **Watch Later**
+- Dedicated menu/navigation for:
+  - Home
+  - Favorites
+  - Watchlist
+- Responsive UI for desktop and mobile
+- Reusable component-based architecture
+- Unit testing with **Jest** and **React Testing Library**
+- API mocking with **Mock Service Worker (MSW)**
+- Linting with **ESLint**
+- Code formatting with **Prettier**
+- Pre-commit hooks with **Husky**
+- GitHub CI workflow included
+
+---
 
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://link-to-project
-```
+git clone https://github.com/sarlakZM/leo-movie.git
 
 Go to the project directory
 
-```bash
-  cd my-project
-```
+bash
+cd leo-movie
 
 Install dependencies
 
-```bash
-  npm install
+bash
+npm install
 ```
-
-Start the server
-
-```bash
-  npm run start
-```
-
-Test the server
-
-```bash
-  npm run test
-```
-
-Build the server
-
-```bash
-  npm run build
-```
-
-Analyze statically the code to quickly find problems.
-
-```bash
-  npm run lint
-  npm run lint:fix
-```
-
-Format the code with [Prettier](https://prettier.io/)
-
-```bash
-  npm run format
-```
-
-## API Reference [TMDb](https://developers.themoviedb.org)
-
-| Function                                | Method | Reference                                                                      |
-| :-------------------------------------- | :----- | :----------------------------------------------------------------------------- |
-| `Get Popular`                           | `GET`  | [Ref](https://developers.themoviedb.org/3/movies/get-popular-movies)           |
-| `Get Favorite Movies`                   | `GET`  | [Ref](https://developers.themoviedb.org/3/account/get-favorite-movies)         |
-| `Get Movie Watchlist`                   | `GET`  | [Ref](https://developers.themoviedb.org/3/account/get-movie-watchlist)         |
-| `Mark as Favorite`                      | `POST` | [Ref](https://developers.themoviedb.org/3/account/mark-as-favorite)            |
-| `Add to Watchlist`                      | `GET`  | [Ref](https://developers.themoviedb.org/3/account/add-to-watchlist)            |
-| `Search Movies`                         | `GET`  | [Ref](https://developers.themoviedb.org/3/search/search-movies)                |
-| `Get Details ( like account id)Account` | `GET`  | [Ref](https://developers.themoviedb.org/3/account/get-account-details)         |
-| `Create Request Token`                  | `GET`  | [Ref](https://developers.themoviedb.org/3/authentication/create-request-token) |
-| `Create Session`                        | `POST` | [Ref](https://developers.themoviedb.org/3/authentication/create-session)       |
-
-**Notes** GET API KEY, SESSION ID, TOKEN ID, ACCOUNT ID
-There are some sequence processes for getting an account id:
-
-- Create account on https://www.themoviedb.org/ website to getting API Key (https://www.themoviedb.org/settings/api)
-- Create a Request Token for getting token id ( need an API key)
-- Create a Session for getting session id ( need API key and token id)
-- Get Detail Account (account id) ( need API key, session id), In the process you have to approve the permission of using the account id.
-
-For getting the Account id manually without calling their methods I used this online http://dev.travisbell.com/ website and finally get the account id.
-
-To run this project, you will need to add the following environment variables to your .env file
-
-- `REACT_APP_TMDB_API_KEY`
-- `REACT_APP_TMDB_API_BASE_URL`
-
-It's just for testing. and don't use these variables manually in your project :
-
-- `REACT_APP_ACCOUNT_ID`
-- `REACT_APP_SESSION_ID`
 
 ## Development
 
-- Adding MSW package to test API in a better way. (It is just a bit little sample that was created in the mocks folder) [More Info about Mock Service Worker](https://mswjs.io/)
-- Using one-page Movies.tsx for movie type and its shapes e.g favorites, watchlist, popular, search. (there are other types like audio, image, and video)
-- Using resue components, constants, services(APIs), routers, react test|jest|msw, Typescript, Eslint, prettier, husky
-- Using CI Github for testing repo project
+| Command | Description |
+| :------ | :---------- |
+| `npm run start` | Start the development server |
+| `npm run test` | Run tests and initialize MSW worker |
+| `npm run build` | Build the project for production |
+| `npm run lint` | Analyze the code with ESLint |
+| `npm run lint:fix` | Automatically fix lint issues |
+| `npm run format` | Format the code with Prettier |
 
-## View(Demo) of project
 
-![img](public/assets/themoviedb-demo.png)
-![img](public/assets/themoviedb-demo-mobile.png)
+---
 
-## Project structure (tree /f)
+## API Reference
 
-```
+TMDb API Documentation: [developers.themoviedb.org](https://developers.themoviedb.org)
+
+| Function | Method | Reference |
+| :------- | :----- | :-------- |
+| `Get Popular Movies` | `GET` | [Ref](https://developers.themoviedb.org/3/movies/get-popular-movies) |
+| `Get Favorite Movies` | `GET` | [Ref](https://developers.themoviedb.org/3/account/get-favorite-movies) |
+| `Get Movie Watchlist` | `GET` | [Ref](https://developers.themoviedb.org/3/account/get-movie-watchlist) |
+| `Mark as Favorite` | `POST` | [Ref](https://developers.themoviedb.org/3/account/mark-as-favorite) |
+| `Add to Watchlist` | `POST` | [Ref](https://developers.themoviedb.org/3/account/add-to-watchlist) |
+| `Search Movies` | `GET` | [Ref](https://developers.themoviedb.org/3/search/search-movies) |
+| `Get Account Details` | `GET` | [Ref](https://developers.themoviedb.org/3/account/get-account-details) |
+| `Create Request Token` | `GET` | [Ref](https://developers.themoviedb.org/3/authentication/create-request-token) |
+| `Create Session` | `POST` | [Ref](https://developers.themoviedb.org/3/authentication/create-session) |
+
+---
+
+## TMDb Authentication Notes
+
+To use TMDb account-related endpoints such as favorites and watchlist, some authentication steps are required:
+
+- Create an account on [TMDb](https://www.themoviedb.org/)
+- Get an API key from:
+  - https://www.themoviedb.org/settings/api
+- Create a request token
+- Create a session using the approved token
+- Retrieve account details to get the account ID
+
+Required values may include:
+
+- API Key
+- Request Token
+- Session ID
+- Account ID
+
+> Note: Some values in this project were used for testing/demo purposes only.
+
+---
+
+## Environment Variables
+
+To run this project, add the following variables to your `.env` file:
+
+env
+REACT_APP_TMDB_API_KEY=
+REACT_APP_TMDB_API_BASE_URL=
+
+Optional / testing-only values:
+
+env
+REACT_APP_ACCOUNT_ID=
+REACT_APP_SESSION_ID=
+
+---
+
+## Development Notes
+
+- **MSW** was added to improve API testing and mocking behavior  
+  [More about Mock Service Worker](https://mswjs.io/)
+
+- A centralized `Movies.tsx` and related movie types are used for handling different movie categories and shapes such as:
+  - Popular
+  - Favorites
+  - Watchlist
+  - Search results
+
+- The project uses:
+  - Reusable components
+  - TypeScript types
+  - API service abstraction
+  - Router-based navigation
+  - Jest + React Testing Library
+  - MSW for mocked network requests
+  - ESLint + Prettier
+  - Husky for pre-commit checks
+  - GitHub Actions for CI
+
+---
+
+## Project Structure
+
+bash
 │   .env
 │   .eslintrc.json
 │   .evn.example
@@ -129,110 +192,64 @@ It's just for testing. and don't use these variables manually in your project :
 │   README.md
 │   tsconfig.json
 │
-├───.github
-│   └───workflows
-│           yaml-ci.yml
+├── .github
+│   └── workflows
+│       └── yaml-ci.yml
 │
-├───.husky
-│   │   pre-commit
-│   │
-│   └───_
-│           .gitignore
-│           husky.sh
+├── .husky
+│   ├── pre-commit
+│   └── _
+│       ├── .gitignore
+│       └── husky.sh
 │
-├───public
-│   │   favicon.ico
-│   │   index.html
-│   │   logo192.png
-│   │   logo512.png
-│   │   manifest.json
-│   │   mockServiceWorker.js
-│   │   robots.txt
-│   │
-│   └───assets
-│           no-results.gif
-│           themoviedb-demo-mobile.png
-│           themoviedb-demo.png
+├── public
+│   ├── assets
+│   │   ├── no-results.gif
+│   │   ├── themoviedb-demo-mobile.png
+│   │   └── themoviedb-demo.png
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   ├── mockServiceWorker.js
+│   └── robots.txt
 │
-└───src
-    │   App.test.tsx
-    │   App.tsx
-    │   index.tsx
-    │   react-app-env.d.ts
-    │   reportWebVitals.ts
-    │   setupTests.ts
-    │
-    ├───components
-    │   │   ErrorBoundary.test.tsx
-    │   │   ErrorBoundary.tsx
-    │   │   ErrorMessage.styles.tsx
-    │   │   ErrorMessage.test.tsx
-    │   │   ErrorMessage.tsx
-    │   │   RouteHandler.test.tsx
-    │   │   RouteHandler.tsx
-    │   │
-    │   ├───AppBarCustom
-    │   │       AppBarCustom.test.tsx
-    │   │       AppBarCustom.tsx
-    │   │       BoxItems.test.tsx
-    │   │       BoxItems.tsx
-    │   │       Logo.test.tsx
-    │   │       Logo.tsx
-    │   │       MenuItems.styles.tsx
-    │   │       MenuItems.test.tsx
-    │   │       MenuItems.tsx
-    │   │
-    │   ├───Button
-    │   │       FavoriteButton.test.tsx
-    │   │       FavoriteButton.tsx
-    │   │       WatchLaterButton.test.tsx
-    │   │       WatchLaterButton.tsx
-    │   │
-    │   ├───Card
-    │   │       CardItem.styles.tsx
-    │   │       CardItem.test.tsx
-    │   │       CardItem.tsx
-    │   │       CardList.test.tsx
-    │   │       CardList.tsx
-    │   │       CardMediaItem.test.tsx
-    │   │       CardMediaItem.tsx
-    │   │
-    │   └───SearchBox
-    │           SearchBox.styles.ts
-    │           SearchBox.test.tsx
-    │           SearchBox.tsx
-    │
-    ├───features
-    │   └───movies
-    │           Movies.test.tsx
-    │           Movies.tsx
-    │
-    ├───mocks
-    │       browser.ts
-    │       handlers.ts
-    │       mock.data.ts
-    │       mockHttpServer.ts
-    │       setupTests.ts
-    │
-    ├───pages
-    │       Home.tsx
-    │
-    ├───services
-    │       baseApi.test.ts
-    │       baseApi.ts
-    │       movieApi.test.ts
-    │       movieApi.ts
-    │
-    ├───types
-    │       Api.types.ts
-    │       App.types.ts
-    │       Movie.types.ts
-    │       Router.types.ts
-    │
-    └───utils
-            constants.ts
-            routes.tsx
-            system.message.ts
-            utils.ts
+└── src
+    ├── components
+    │   ├── AppBarCustom
+    │   ├── Button
+    │   ├── Card
+    │   └── SearchBox
+    ├── features
+    │   └── movies
+    ├── mocks
+    ├── pages
+    ├── services
+    ├── types
+    └── utils
 
-```
+---
+
+## Design Decisions
+
+- **React + TypeScript** were chosen for a scalable and strongly typed frontend solution
+- **TMDb API** was selected because it provides a rich movie dataset and account-based features
+- **Reusable components** were used to keep the UI modular and maintainable
+- **MSW** was included to make tests more realistic and less dependent on live APIs
+- **Husky + lint-staged** help enforce code quality before commits
+- **Responsive design** was prioritized to satisfy the recruitment requirement for both desktop and mobile usability
+
+---
+
+## Demo
+
+![img](public/assets/themoviedb-demo.png)
+![img](public/assets/themoviedb-demo-mobile.png)
+
+---
+
+## Author
+
+**Zahra Sarlak**  
+Assignment for [leovegas](https://www.leovegas.com/) [leovegasgroup](https://www.leovegasgroup.com/)
