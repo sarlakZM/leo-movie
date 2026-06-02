@@ -181,7 +181,7 @@ REACT_APP_SESSION_ID=
 
 ## Project Structure
 
-bash
+```
 │   .env
 │   .eslintrc.json
 │   .evn.example
@@ -228,7 +228,7 @@ bash
     ├── services
     ├── types
     └── utils
-
+```
 ---
 
 ## Design Decisions
